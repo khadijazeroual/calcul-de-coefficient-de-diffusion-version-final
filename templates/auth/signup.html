@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block title %}Inscription{% endblock %}
+
+{% block content %}
+<div class="center-content" style="margin-top: 10%; animation: fadeIn 1s ease-in-out;">
+    <h2>Inscription</h2>
+    <form method="POST" style="max-width: 400px; margin: 0 auto; text-align: left;">
+        <label for="email" style="display: block; margin-bottom: 5px;">Email :</label>
+        <input type="email" name="email" id="email" required style="width: 100%; padding: 10px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 5px;">
+        
+        <label for="username" style="display: block; margin-bottom: 5px;">Nom d'utilisateur (optionnel) :</label>
+        <input type="text" name="username" id="username" style="width: 100%; padding: 10px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 5px;">
+        
+        <label for="password" style="display: block; margin-bottom: 5px;">Mot de passe :</label>
+        <input type="password" name="password" id="password" required style="width: 100%; padding: 10px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 5px;">
+        
+        <button type="submit" class="button-primary" style="width: 100%; margin-bottom: 15px;">S'inscrire</button>
+    </form>
+</div>
+{% endblock %}

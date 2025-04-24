@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% extends "base.html" %}
+    <style>
+        body {
+            background-image: url('https://daily.kellogg.edu/wp-content/uploads/2018/04/chemistry.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+    </style>
+</head>
+<body>
+    {% block title %}Accueil{% endblock %}
+
+    {% block content %}
+    <div class="center-content">
+        <h2>Bienvenue sur l'application de calcul de diffusion</h2>
+        <img src="{{ image_url }}" alt="Chemistry Image" style="max-width: 100%; height: auto;">
+        <a href="{{ url_for('login_choice') }}" class="button-primary">C'est parti</a>
+    </div>
+    {% endblock %}
+</body>
+</html>

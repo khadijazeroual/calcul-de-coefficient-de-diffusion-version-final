@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block title %}Choix de connexion{% endblock %}
+
+{% block content %}
+<div class="center-content">
+    <h2>Choisissez une option</h2>
+    <div style="margin-top: 20px;">
+        <a href="{{ url_for('login') }}" class="button-primary" style="margin-right: 10px;">Se connecter</a>
+        <a href="{{ url_for('signup') }}" class="button-primary">S'inscrire</a>
+    </div>
+</div>
+{% endblock %}

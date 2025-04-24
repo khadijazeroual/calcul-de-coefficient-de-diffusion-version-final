@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+
+{% block title %}Calcul{% endblock %}
+
+{% block content %}
+<div class="center-content">
+    <h2>Calcul du coefficient de diffusion</h2>
+    <p>Connecté en tant que : <strong>{{ username }}</strong></p>
+    <form method="POST">
+        <label for="x_A">x_A :</label>
+        <input type="number" step="any" name="x_A" id="x_A" value="0.45" required>
+        
+        <label for="D_AB0">D_AB0 :</label>
+        <input type="number" step="any" name="D_AB0" id="D_AB0" value="1.2e-5" required>
+        
+        <label for="D_BA0">D_BA0 :</label>
+        <input type="number" step="any" name="D_BA0" id="D_BA0" value="1.1e-5" required>
+        
+        <label for="phi_A">phi_A :</label>
+        <input type="number" step="any" name="phi_A" id="phi_A" value="0.5" required>
+        
+        <label for="phi_B">phi_B :</label>
+        <input type="number" step="any" name="phi_B" id="phi_B" value="0.5" required>
+        
+        <label for="lambda_A">lambda_A :</label>
+        <input type="number" step="any" name="lambda_A" id="lambda_A" value="1.0" required>
+        
+        <label for="lambda_B">lambda_B :</label>
+        <input type="number" step="any" name="lambda_B" id="lambda_B" value="1.0" required>
+        
+        <label for="theta_BA">theta_BA :</label>
+        <input type="number" step="any" name="theta_BA" id="theta_BA" value="0.1" required>
+        
+        <label for="theta_AB">theta_AB :</label>
+        <input type="number" step="any" name="theta_AB" id="theta_AB" value="0.1" required>
+        
+        <label for="theta_AA">theta_AA :</label>
+        <input type="number" step="any" name="theta_AA" id="theta_AA" value="0.1" required>
+        
+        <label for="theta_BB">theta_BB :</label>
+        <input type="number" step="any" name="theta_BB" id="theta_BB" value="0.1" required>
+        
+        <label for="tau_AB">tau_AB :</label>
+        <input type="number" step="any" name="tau_AB" id="tau_AB" value="1.0" required>
+        
+        <label for="tau_BA">tau_BA :</label>
+        <input type="number" step="any" name="tau_BA" id="tau_BA" value="1.0" required>
+        
+        <label for="q_A">q_A :</label>
+        <input type="number" step="any" name="q_A" id="q_A" value="1.0" required>
+        
+        <label for="q_B">q_B :</label>
+        <input type="number" step="any" name="q_B" id="q_B" value="1.0" required>
+        
+        <button type="submit">Calculer</button>
+    </form>
+    {% if result %}
+        <div style="margin-top: 20px;">
+            <h3>Résultat :</h3>
+            <p><strong>Coefficient de diffusion corrigé :</strong> {{ result }}</p>
+            <p><strong>Erreur :</strong> {{ error_value }}</p>
+        </div>
+    {% elif error_message %}
+        <div style="margin-top: 20px; color: red;">
+            <p>{{ error_message }}</p>
+        </div>
+    {% endif %}
+    <a href="{{ url_for('logout') }}" class="button-secondary">Se déconnecter</a>
+</div>
+{% endblock %}
